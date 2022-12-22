@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Registration page</h1>
+    <h3>Sign up here</h3>
+    <!-- showing error messages from python using for loop -->
+    {% for message in messages %}
+    <h3 style="color: red">{{message}}</h3>
+    {% endfor %}
+    <form action="" method="post">
+      {% csrf_token %}
+      <label for="Username">
+        Username
+        <input type="text" name="username" placeholder="Enter username" />
+      </label>
+      <label for="Email">
+        Email
+        <input type="email" name="email" placeholder="Enter email" />
+      </label>
+      <label for="password">
+        Password
+        <input type="password" name="password" placeholder="Enter Password" />
+      </label>
+      <label for="password2">
+        Repeat Password
+        <input type="password" name="password2" placeholder="Repeat Password" />
+      </label>
+      <input type="submit" />
+    </form>
+  </body>
+</html>
