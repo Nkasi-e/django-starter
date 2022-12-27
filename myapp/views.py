@@ -11,7 +11,7 @@ def index(request):
     #    'age':'20',
     #    'nationality':'Nigeria'
     # }
-    features = Feature.objects.all() # to access the files in the database admin and it is an array 
+    features = Feature.objects.all() # to access all the files in the database admin and it is an array 
     return render(request, 'index.html', {'features': features})
 
 def about(request):
@@ -101,6 +101,6 @@ def logout(request):
     auth.logout(request)
     return redirect('/')
 
-def post(request, pk):
+def post(request, pk): # Dynamically passing a parameter
     return render(request, 'post.html', {'pk': pk})
         
